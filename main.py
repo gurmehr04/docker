@@ -7,6 +7,11 @@ import uvicorn
 def read_root():
     return dict(name = "Prateek", Location = "Deheradun")
 
+
+@app.get("/v2")
+def read_root():
+    return dict(name = "Gurmehr", Location = "Deheradun")
+
 @app.get("/{data}")
 def read_root(data):
     return dict(hi = data, Location = "Deheradun")

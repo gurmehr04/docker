@@ -9,5 +9,5 @@ jobs:
       - name: Build & Push Image
         run: |
           echo "${{ secrets.DOCKERTOKEN }}" | docker login -u "gurmehr04" --password-stdin
-          docker build -t gurmehr04/devops:v0.1 .
-          docker push gurmehr04/devops:v0.1
+          docker build -t gurmehr04/devops:v0.1.1 .
+          docker push gurmehr04/devops:v0.1.1
