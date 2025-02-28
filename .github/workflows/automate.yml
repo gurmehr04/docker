@@ -1,0 +1,13 @@
+name: Docker image build
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latet
+
+    steps:
+      - uses: actions/checkout@v1       
+      - name: Build & Push Image
+        run:  |
+          echo "${{ secrets.DOCKERTOKEN }}" | docker login -u "gurmehr04" --password-stdin
+                docker build -t gurmehr04/devops:v0.1 .
+                docker push gurmehr04/devops:v0.1
